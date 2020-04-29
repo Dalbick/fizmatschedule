@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="center-object">{{ grade }} schedule</h2>
+    <table class="table table-bordered table-striped table-dark">
+    <thead class="thead-light">
+    <tr>
+        <th width="120"></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in range(10) %}
+        <tr>
+            <th>{{ time[i] }}</th>
+            {% for j in range(5) %}
+                <td style="white-space: pre-line">{{ schedule[j][i] }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}
